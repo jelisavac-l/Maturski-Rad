@@ -1,7 +1,13 @@
 *{
     padding: 0;
     margin: 0;
-    font-family: 'Red Hat Mono', monospace;
+    /*
+        ~I rece Jezdimir: neka bude monospace font...~ 
+    */
+    font-family: 'Red Hat Mono', monospace; 
+    /*
+        ~...i bi monospace font.~ 
+    */
 }
 
 .background{
@@ -25,6 +31,7 @@
     margin-bottom: 1em;
 }
 
+/* Posebna klasa za ime da se ne bi pomesalo u js */
 .display-ime{
     color: white;
     font-size: 15px;
@@ -65,7 +72,7 @@
 }
 
 .playerO{
-    color: rgb(168, 130, 23); /* Bpja pomocu RGB vrednosti */
+    color: rgb(168, 130, 23); /* Boja pomocu RGB vrednosti */
 }
 
 .controls {
