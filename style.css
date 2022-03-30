@@ -72,7 +72,7 @@
 }
 
 .playerO{
-    color: rgb(168, 130, 23); /* Boja pomocu RGB vrednosti */
+    color: rgb(0, 110, 255); /* Boja pomocu RGB vrednosti */
 }
 
 .controls {
@@ -98,7 +98,7 @@
 }
 
 #reset{
-    background-color: #FF3860;
+    background-color: #c01537;
     color: white;
     padding: 8px;
     border-radius: 8px;

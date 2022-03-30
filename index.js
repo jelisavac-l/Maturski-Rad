@@ -14,6 +14,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const PLAYERX_WON = 'PLAYERX_WON';
     const PLAYERO_WON = 'PLAYERO_WON';
+    const TIE = 'TIE';  // Ova me greska kostala 2 sata trazenja :(
 
     /*
         Indeksi na resetci (tabli)
@@ -64,7 +65,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
         if(!board.includes('')) // Ako na tabli nema praznih polja, onde je nereseno
-        announce(TIE);
+        announce(TIE);  // Dva ipo sata sam trazio gde je greska A NISAM DEFINISAO CONST TIE NITI SLAO KAO STRING AAAAAAAAAAAAAAAAAA!
     }
 
     // Ovime se 'objavljuje' koji je igrac pobedio, u slucaju da je nereseno, ispisuje se nereseno
@@ -74,8 +75,7 @@ window.addEventListener('DOMContentLoaded', () => {
             break;
             case PLAYERX_WON: announcer.innerHTML = 'Igrač <span class="playerX"><strong>X</strong></span> je pobednik!';
             break;
-            case TIE:
-                announcer.innerText = 'Nerešeno!';
+            case TIE: announcer.innerHTML = 'Nerešeno!';
         }
         announcer.classList.remove('hide');
     };
@@ -111,16 +111,17 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Vracamo tablu onakva kakva je bila pre igre
     const resetBoard = () => {
-        board = ['', '', '', '', '', '', '', '', ''];
-        isGameActive = true;
-        announcer.classList.add('hide');
+        board = ['', '', '', '', '', '', '', '', ''];   // Prazne se polja
+        isGameActive = true;    // Igra postaje aktivna za novu partiju
+        announcer.classList.add('hide');    // Sakriva se tekst pobednika
 
-        if(currentPlayer === 'O'){
+        if(currentPlayer === 'O'){  // Vraca se X da igra prvi
             changePlayer();
         }
 
-        tiles.forEach(tile => {
+        tiles.forEach(tile => { // Tekst se vraca u normalu (brisu se boje i sadrzaj)
             tile.innerText = '';
             tile.classList.remove('playerX');
             tile.classList.remove('playerO');
