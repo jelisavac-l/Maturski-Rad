@@ -1,0 +1,102 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Red Hat Mono', monospace;
+}
+
+.background{
+    background-color: #12181B;
+    height: 100vh;
+    padding-top: 1px;
+}
+
+.title{
+    color: white;
+    text-align: center;
+    font-size: 48px;
+    margin-top: 10%;
+}
+
+.display{
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.display-ime{
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+/* Da bismo sakrili neki element, koristimo sledecu klasu: */
+.hide{
+    display: none;
+}
+
+/* Klasa koja koristi CSS-grid sistem i koja sluzi da ocrta polje (resetku) za igru */
+.container{
+    margin: 0 auto; 
+    display: grid; /* CSS-grid */
+    grid-template-columns: 33% 33% 33%; /* Kolone delimo na trecine */
+    grid-template-rows: 33% 33% 33%; /* Redove delimo na trecine */
+    max-width: 300px;
+}
+
+/* Ova klasa predstavlja jedno polje unutar resetke */
+.tile{
+    border: 1px solid white;
+    min-width: 100px;
+    min-height: 100px;
+
+    /* Centriranje elemenata i teksta pomocu flexboxa */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+.playerX{
+    color: #09ca43; /* Boja pomocu HEX vrednosti */
+}
+
+.playerO{
+    color: rgb(168, 130, 23); /* Bpja pomocu RGB vrednosti */
+}
+
+.controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.controls button {
+    color: white;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+    font-size: 20px;
+    margin-left: 1em;
+    cursor: pointer;
+}
+
+.restart {
+    background-color: #498AFB;
+}
+
+#reset{
+    background-color: #FF3860;
+    color: white;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+    font-size: 20px;
+    margin-left: 1em;
+    cursor: pointer;
+}
