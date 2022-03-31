@@ -41,7 +41,7 @@ window.addEventListener('DOMContentLoaded', () => {
     ];
 
 
-    function handleResultValidation(){
+    function proveraRezultata(){
         let roundWon = false;
         for(let i = 0; i <= 7; i++){
             const winCondition = winningConditions[i];
@@ -81,7 +81,7 @@ window.addEventListener('DOMContentLoaded', () => {
     };
 
     // Sledecom funkcijom osiguravamo da igrac moze da odigra samo ono polje koje je slobodno
-    const isValidAction = (tile) => {
+    const dozvoljenPotez = (tile) => {
         if(tile.innerText === 'X' || tile.innerText === 'O'){
             return false;
         }
@@ -102,11 +102,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // userAction funkcija predstavlja potez igraca
     const userAction = (tile, index) => {
-        if(isValidAction(tile) && isGameActive){    // Provera da li je koristnik pritisnuo dozvoljeno polje i da li igra traje
+        if(dozvoljenPotez(tile) && isGameActive){    // Provera da li je koristnik pritisnuo dozvoljeno polje i da li igra traje
             tile.innerText = currentPlayer; // Postavlja se X ili O na polje koje je igrac pritisnuo
             tile.classList.add(`player${currentPlayer}`);
             updateBoard(index);
-            handleResultValidation();
+            proveraRezultata();
             changePlayer();
         }
     }
