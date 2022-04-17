@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,tr,td{
+    border: 1px solid black;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+button{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+}
+p{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+}
+
+    </style>
+</head>
+<body>
+<center>
+    <div>
+        <form id="forma">
+            <table>
+                <tr><th colspan="2">Forma</th></tr>
+                <tr> <td colspan="1">Unesi ime: </td><td colspan="1"><input type="text" id="ime"></td></tr>  <br>
+                <tr> <td colspan="1">Unesi prezime: </td><td><input type="text" id="prezime"></td></tr><br>
+               <tr><td colspan="1">Unesi email:</td> <td colspan="1"><input type="text" id="email"></td> </tr> <br>
+               <tr><td colspan="1">Unesi sifru: </td> <td colspan="1"><input type="password" id="sifra"></td> </tr> <br>
+               <tr><td colspan="1">Pol</td> <td colspan="1">Musko<input type="radio" name="rg1" checked> Zensko<input type="radio" name="rg1"></td> </tr>  <br>
+               <tr><td colspan="1">Unesi adresu: </td><td colspan="1"><input type="text" id="adresa"></td> </tr>  <br>           
+            </table>
+        </form>
+        <br>
+        <button type="button" id="sakri" >Sakrij formu</button>
+        <button type="button" id="prijavi">Prijavi</button>
+        <p id="pozdrav"></p>
+    </div>
+       
+    
+    <script>
+        function promeniPrikazSadrzaja() 
+        {
+            var forma= document.getElementById("forma");
+            if (forma.style.display== "none")
+            {
+                forma.style.display= "block";
+            }
+            else 
+            {
+                forma.style.display= "none";
+            }
+        } 
+       var dugme=document.getElementById("sakri");
+       dugme.addEventListener("click",promeniPrikazSadrzaja);
+
+        const colorError = "#fee";
+        const colorOK = "#fff";
+       var dugmePrijavi= document.getElementById("prijavi");
+       dugmePrijavi.addEventListener("click", prijavi);
+       function prijavi() 
+       {
+            var ime= document.getElementById("ime");
+            var prezime= document.getElementById("prezime");
+            var email= document.getElementById("email");
+            var sifra= document.getElementById("sifra");
+            var adresa= document.getElementById("adresa");
+            var OK = true;
+            if (ime.value== "") 
+            {
+                ime.style.backgroundColor= colorError;
+                OK = false;
+            }
+            if (prezime.value== "") 
+            {
+                prezime.style.backgroundColor= colorError;
+                OK = false;
+            }
+            if (email.value== "") 
+            {
+                email.style.backgroundColor= colorError;
+                OK = false;
+            }
+            if (sifra.value== "") 
+            {
+                sifra.style.backgroundColor= colorError;
+                OK = false;
+            }
+            if (adresa.value== "") 
+            {
+                adresa.style.backgroundColor= colorError;
+                OK = false;
+            }
+            if (!OK)
+                return;
+
+            var pozdrav= document.getElementById("pozdrav");
+            pozdrav.innerHTML= ime.value+ " " + prezime.value+ " " + email.value + " " +"*******" + " " + adresa.value;
+        }
+    </script>
+	</center>
+</body>
+</html>
